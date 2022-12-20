@@ -47,11 +47,15 @@ public class ThrowController : MonoBehaviour
         if (!Touchscreen.current.primaryTouch.press.isPressed)
         {
             //if it is Streching
-            if (isStreching)
+            if (isStreching )
             {
                 ThrowBall();
-            }
 
+            }
+            if(Vector3.Distance(pivot.transform.position, ballRigidbody.transform.position) >= 1f)
+            {
+                CutSpringJoin();
+            }
             //update isStreching to false
             isStreching = false;
             
